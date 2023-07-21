@@ -4593,7 +4593,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3201264556606992220}
-  m_LocalRotation: {x: -0.040700376, y: 0.87774825, z: -0.07579467, w: -0.47133505}
+  m_LocalRotation: {x: -0.040700387, y: 0.87774825, z: -0.07579469, w: -0.47133505}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5529,6 +5529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540a53df08f3a42a9b4e38832a7ad980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
 --- !u!1 &4392710894882361952
 GameObject:
   m_ObjectHideFlags: 0
@@ -7196,6 +7199,7 @@ GameObject:
   - component: {fileID: 7984061121110811810}
   - component: {fileID: 186542993084900404}
   - component: {fileID: 7310725576827379107}
+  - component: {fileID: 1445552039490883604}
   m_Layer: 0
   m_Name: DPS
   m_TagString: Player
@@ -7467,6 +7471,23 @@ MonoBehaviour:
   compressRotation: 0
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &1445552039490883604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639638262253047873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  clientAuthority: 0
+  animator: {fileID: 1838989255605559870}
 --- !u!1 &6654083579049445508
 GameObject:
   m_ObjectHideFlags: 0

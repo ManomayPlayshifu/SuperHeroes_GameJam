@@ -346,7 +346,7 @@ namespace RPGCharacterAnims
 
 			if(SelectHero == Hero.Tank)
             {
-				if (inputAttackR)
+				if (inputAttackL)
 				{
 					int random = UnityEngine.Random.Range(0, 4);
 
@@ -354,18 +354,15 @@ namespace RPGCharacterAnims
 					{
 						StartCoroutine(SlowMo(1f));
 					}
-					rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Left));
-					
-				}
-				else if (inputAttackL)
-				{
-					int random = UnityEngine.Random.Range(0, 4);
 
-					if (random == 0)
-					{
-						StartCoroutine(SlowMo(1f));
+					if( random < 2)
+                    {
+						rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Left));
 					}
-					rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Right));
+                    else
+                    {
+						rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Right));
+					}
 					
 				}
 			}

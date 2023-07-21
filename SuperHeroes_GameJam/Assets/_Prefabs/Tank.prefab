@@ -401,8 +401,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037473355398340318}
-  m_LocalRotation: {x: 0.034728955, y: 0.96263826, z: -0.22266126, w: 0.15014477}
-  m_LocalPosition: {x: -0.00000033717478, y: 0, z: -0.00000033717487}
+  m_LocalRotation: {x: 0.034728978, y: 0.9626383, z: -0.22266129, w: 0.15014486}
+  m_LocalPosition: {x: 8.526513e-14, y: 0, z: -0.0000006743496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1057,8 +1057,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2817433995095378768}
-  m_LocalRotation: {x: 0.030580547, y: 0.9683376, z: -0.19689727, w: 0.15039463}
-  m_LocalPosition: {x: -0.00000033717478, y: 0, z: -0.00000033717487}
+  m_LocalRotation: {x: 0.030580562, y: 0.96833766, z: -0.19689733, w: 0.1503947}
+  m_LocalPosition: {x: 8.526513e-14, y: 0, z: -0.0000006743496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1676,7 +1676,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3445526105680432632}
-  m_LocalRotation: {x: 0.028362662, y: 0.9708493, z: -0.18696848, w: 0.1472755}
+  m_LocalRotation: {x: 0.028362662, y: 0.9708493, z: -0.18696848, w: 0.14727545}
   m_LocalPosition: {x: 8.526513e-14, y: 0, z: -0.0000006743496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2046,6 +2046,7 @@ GameObject:
   - component: {fileID: 639054155502710066}
   - component: {fileID: 7682807462057743251}
   - component: {fileID: 7133418670051403515}
+  - component: {fileID: 1330299930690854782}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -2315,6 +2316,23 @@ MonoBehaviour:
   compressRotation: 0
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &1330299930690854782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4195048926317353425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  clientAuthority: 0
+  animator: {fileID: 9193557591912475566}
 --- !u!1 &4562783253393762654
 GameObject:
   m_ObjectHideFlags: 0
