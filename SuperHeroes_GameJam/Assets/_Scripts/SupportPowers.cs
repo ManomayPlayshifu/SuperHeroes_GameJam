@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPGCharacterAnims;
 
 public class SupportPowers : MonoBehaviour
 {
     GameObject Box;
     Coroutine LiftingBox;
     Rigidbody BoxRigidBody;
+
+    public RPGCharacterInputController RPGCharacterInputController;
 
     public GameObject ShieldObject;
 
@@ -69,6 +72,14 @@ public class SupportPowers : MonoBehaviour
             }
             else
             {
+                int random = UnityEngine.Random.Range(0, 4);
+
+                if (random == 0)
+                {
+                    RPGCharacterInputController.SlowMotion(2f);
+                }
+
+
                 Vector3 direction = Box.transform.position - target.transform.position;
                 BoxRigidBody.useGravity = true;
                 BoxRigidBody.AddForce(-direction * 3f, ForceMode.VelocityChange);

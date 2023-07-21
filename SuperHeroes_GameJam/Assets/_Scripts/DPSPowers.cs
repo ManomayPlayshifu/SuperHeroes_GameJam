@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using RPGCharacterAnims;
 using Cinemachine;
+using System;
 
 public class DPSPowers : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class DPSPowers : MonoBehaviour
 
     float Timer;
     public float CoolDown;
+
+    public RPGCharacterInputController RPGCharacterInputController;
 
     RaycastHit Hit;
 
@@ -41,7 +44,15 @@ public class DPSPowers : MonoBehaviour
 
             if(Timer >= CoolDown)
             {
-                foreach(Transform spawnPoint in BulletSpawns)
+                int random = UnityEngine.Random.Range(0, 4);
+
+                if (random == 0)
+                {
+                    RPGCharacterInputController.SlowMotion(2f);
+                }
+
+
+                foreach (Transform spawnPoint in BulletSpawns)
                 {
                     var bullet = Instantiate(BulletPrefab, spawnPoint.position, spawnPoint.rotation);
                     //bullet.GetComponent<Bullet>().Target = Target;
@@ -51,6 +62,8 @@ public class DPSPowers : MonoBehaviour
             }
         }
     }
+
+  
 
     //private void FixedUpdate()
     //{

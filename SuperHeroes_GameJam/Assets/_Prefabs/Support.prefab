@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd9305c26fe244eba44dfd2d1f40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RPGCharacterInputController: {fileID: 1460292862417583984}
   ShieldObject: {fileID: 7710614446386977849, guid: 0581e06af94d3474e8f3331fafcb8c69, type: 3}
 --- !u!1 &855384164372001019
 GameObject:
@@ -2403,7 +2404,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4384438107683172377}
-  m_LocalRotation: {x: -0.0015126914, y: 0.9819251, z: -0.18910147, w: -0.007854819}
+  m_LocalRotation: {x: -0.0015126914, y: 0.9819251, z: -0.18910146, w: -0.007854819}
   m_LocalPosition: {x: 0.00000016858667, y: 0, z: 0.0000038775106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

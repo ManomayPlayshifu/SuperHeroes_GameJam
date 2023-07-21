@@ -94,6 +94,11 @@ namespace RPGCharacterAnims
 
         }
 
+		public void SlowMotion(float time)
+        {
+			StartCoroutine(SlowMo(time));
+        }
+
         private void Special()
         {
             if (inputSpecial)
@@ -310,11 +315,11 @@ namespace RPGCharacterAnims
 			else { rpgCharacterController.TryEndAction(HandlerTypes.Face); }
         }
 
-		IEnumerator SlowMo()
+		IEnumerator SlowMo(float time)
         {
 			rpgCharacterController.TryStartAction(HandlerTypes.SlowTime, 0.25f);
 
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(time);
 			rpgCharacterController.TryEndAction(HandlerTypes.SlowTime);
 		
 		}
@@ -338,7 +343,7 @@ namespace RPGCharacterAnims
 
 					if (random == 0)
 					{
-						StartCoroutine(SlowMo());
+						StartCoroutine(SlowMo(1f));
 					}
 					rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Left));
 					
@@ -349,7 +354,7 @@ namespace RPGCharacterAnims
 
 					if (random == 0)
 					{
-						StartCoroutine(SlowMo());
+						StartCoroutine(SlowMo(1f));
 					}
 					rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Right));
 					
@@ -363,13 +368,7 @@ namespace RPGCharacterAnims
                     //rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Left));
                     if (!IsAttacking)
                     {
-						int random = UnityEngine.Random.Range(0, 4);
-
-						if (random == 0)
-						{
-							StartCoroutine(SlowMo());
-						}
-
+						
 						IsAttacking = true;
 						DPSPowers.BulletAttack();
 						canMove = true;
@@ -403,13 +402,7 @@ namespace RPGCharacterAnims
 
 					if (!IsAttacking && CanAttack)
 					{
-						int random = UnityEngine.Random.Range(0, 4);
-
-						if (random == 0)
-						{
-							StartCoroutine(SlowMo());
-						}
-
+						
 						IsAttacking = true;
 						CanAttack = false;
 						rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Right));
