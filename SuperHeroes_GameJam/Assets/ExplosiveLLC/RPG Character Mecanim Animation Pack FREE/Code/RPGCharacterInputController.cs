@@ -85,7 +85,7 @@ namespace RPGCharacterAnims
             Attacking();
 			Special();
 
-            if (speacialActive)
+            if (speacialActive && SelectHero == Hero.DPS)
             {
 				var move = new Vector3(inputHorizontal, 0,inputVertical) * -5 * Time.deltaTime;
 
@@ -98,13 +98,26 @@ namespace RPGCharacterAnims
         {
             if (inputSpecial)
             {
-				if (SelectHero == Hero.DPS)
+				if (SelectHero == Hero.DPS && !speacialActive)
                 {
 					StartCoroutine(Fly());
+                }
+				else if(SelectHero == Hero.Support && !speacialActive)
+                {
+					StartCoroutine(Shield());
+					
                 }
 
 			}
         }
+
+		IEnumerator Shield()
+        {
+			SupportPowers.Shield();
+			speacialActive = true;
+			yield return new WaitForSeconds(20f);
+			speacialActive = false;
+		}
 
 		IEnumerator Fly()
         {
@@ -159,7 +172,7 @@ namespace RPGCharacterAnims
         private void Inputs()
         {
 	        try {
-                if (!speacialActive)
+                if (!speacialActive && SelectHero == Hero.DPS)
                 {
 					inputJump = Input.GetButtonDown("Jump");
 					isJumpHeld = Input.GetButton("Jump");

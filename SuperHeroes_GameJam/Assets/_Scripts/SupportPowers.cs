@@ -8,6 +8,28 @@ public class SupportPowers : MonoBehaviour
     Coroutine LiftingBox;
     Rigidbody BoxRigidBody;
 
+    public GameObject ShieldObject;
+
+    public void Shield()
+    {
+        StartCoroutine(SpawnShield());
+
+    }
+
+    IEnumerator SpawnShield()
+    {
+        RaycastHit hit;
+        LayerMask mask = LayerMask.GetMask("Walkable");
+
+        if(Physics.Raycast(transform.position,Vector3.down, out hit, 5f,mask))
+        {
+            GameObject shield = Instantiate(ShieldObject, hit.point, Quaternion.identity);
+            yield return new WaitForSeconds(15f);
+            Destroy(shield);
+        }
+ 
+    }
+
     public void Lift()
     {
         Box = NearestGameObject(transform.position, 20f, "Box");
@@ -36,26 +58,9 @@ public class SupportPowers : MonoBehaviour
 
     public void Throw()
     {
-        if(LiftingBox != null)
+        if (Box != null)
         {
-            StopCoroutine(LiftingBox);
 
-            GameObject target = NearestGameObject(transform.position, 20f, "Enemy");
-
-            if (target == null)
-            {
-                BoxRigidBody.useGravity = true;
-            }
-            else
-            {
-                Vector3 direction = Box.transform.position - target.transform.position;
-                BoxRigidBody.useGravity = true;
-                BoxRigidBody.AddForce(-direction * 3f, ForceMode.VelocityChange);
-
-            }
-        }
-        else
-        {
             GameObject target = NearestGameObject(transform.position, 20f, "Enemy");
 
             if (target == null)
