@@ -4,12 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using RPGCharacterAnims.Actions;
 using RPGCharacterAnims.Lookups;
+using Mirror;
 
 namespace RPGCharacterAnims
 {
 	[HelpURL("https://docs.unity3d.com/Manual/class-InputManager.html")]
 
-	public class RPGCharacterInputController : MonoBehaviour
+	public class RPGCharacterInputController : NetworkBehaviour
     {
         RPGCharacterController rpgCharacterController;
 		RPGCharacterMovementController rpgCharacterMovementController;
@@ -57,12 +58,22 @@ namespace RPGCharacterAnims
 		private bool CanAttack = true;
 
         private void Awake()
-        {	rpgCharacterController = GetComponent<RPGCharacterController>();
+        {
+			rpgCharacterController = GetComponent<RPGCharacterController>();
 			rpgCharacterMovementController = GetComponent<RPGCharacterMovementController>();
 		}
 
         private void Update()
         {
+
+			if (!isOwned)
+			{
+				return;
+			}
+			if(!NetworkClient.active)
+            {
+				return;
+            }
 			// Pause input for other external input.
 			if (inputPaused) {
 				if (Time.time > inputPauseTimeout) { inputPaused = false; }
@@ -184,8 +195,6 @@ namespace RPGCharacterAnims
 						inputJump = Input.GetButtonDown("Jump");
 						isJumpHeld = Input.GetButton("Jump");
 					}
-
-					
 				}
                 else
                 {

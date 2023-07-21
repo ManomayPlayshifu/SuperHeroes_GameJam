@@ -2008,6 +2008,6 @@ MonoBehaviour:
   characterSelectionCanvas: {fileID: 1287320513}
   textField: {fileID: 1748268338}
   characterPrefabs:
-  - {fileID: 7287838229223506519, guid: d299ebf659eb04ce392486e3bb85d7c8, type: 3}
-  - {fileID: 4043371808830212560, guid: da0c82e5fdc05416a833051cfa5afe14, type: 3}
-  - {fileID: 3159655956316497400, guid: bc3bb252b80524b6fb1e0fc61276f8c7, type: 3}
+  - {fileID: 4195048926317353425, guid: 15b38f86a19bc48ca9118a2654748e81, type: 3}
+  - {fileID: 6639638262253047873, guid: f27995e7745464015bd4f8bd233a7b06, type: 3}
+  - {fileID: 6745448857736592822, guid: d78120b0833f7449ea323bbc6c88c2db, type: 3}

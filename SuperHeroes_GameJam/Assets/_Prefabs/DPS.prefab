@@ -4593,7 +4593,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3201264556606992220}
-  m_LocalRotation: {x: -0.040700383, y: 0.87774825, z: -0.075794674, w: -0.47133505}
+  m_LocalRotation: {x: -0.040700387, y: 0.87774825, z: -0.07579469, w: -0.47133505}
   m_LocalPosition: {x: 0.000004046098, y: 0, z: 0.0000033717502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5130,7 +5130,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4034315427931698385}
-  m_LocalRotation: {x: -0.06414674, y: 0.8739443, z: -0.12016025, w: -0.46654925}
+  m_LocalRotation: {x: -0.06414674, y: 0.8739442, z: -0.12016025, w: -0.46654934}
   m_LocalPosition: {x: 0.0000016858744, y: 0, z: 0.0000016858748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5750,7 +5750,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4764715082443313086}
-  m_LocalRotation: {x: -0.047706008, y: 0.8769045, z: -0.0890202, w: -0.46993402}
+  m_LocalRotation: {x: -0.047706015, y: 0.8769046, z: -0.08902021, w: -0.46993402}
   m_LocalPosition: {x: 0.0000016858744, y: 0, z: 0.0000016858748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7181,6 +7181,8 @@ GameObject:
   - component: {fileID: 1584174920545030791}
   - component: {fileID: 3780771142865658507}
   - component: {fileID: 7984061121110811810}
+  - component: {fileID: 186542993084900404}
+  - component: {fileID: 7310725576827379107}
   m_Layer: 0
   m_Name: DPS
   m_TagString: Player
@@ -7355,6 +7357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b02b01da8792e143b1a29f8aa2b8168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   DPSPowers: {fileID: 8722362890233682783}
   SupportPowers: {fileID: 0}
   SelectHero: 1
@@ -7398,6 +7403,57 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 2
+--- !u!114 &186542993084900404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639638262253047873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 771428299
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &7310725576827379107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639638262253047873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 6639638262252620897}
+  clientAuthority: 0
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  sendIntervalMultiplier: 1
+  timelineOffset: 0
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  onlySyncOnChange: 1
+  onlySyncOnChangeCorrectionMultiplier: 2
+  rotationSensitivity: 0.01
+  compressRotation: 0
+  positionPrecision: 0.01
+  scalePrecision: 0.01
 --- !u!1 &6654083579049445508
 GameObject:
   m_ObjectHideFlags: 0
