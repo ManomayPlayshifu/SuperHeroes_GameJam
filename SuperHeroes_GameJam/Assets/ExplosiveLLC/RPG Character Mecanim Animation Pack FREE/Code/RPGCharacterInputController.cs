@@ -203,7 +203,7 @@ namespace RPGCharacterAnims
 		        // Slow time toggle.
 		        if (rpgCharacterController.HandlerExists(HandlerTypes.SlowTime)) {
 			        if (Input.GetKeyDown(KeyCode.T)) {
-				        if (!rpgCharacterController.TryStartAction(HandlerTypes.SlowTime, 0.0125f))
+				        if (!rpgCharacterController.TryStartAction(HandlerTypes.SlowTime, 0.25f))
 						{ rpgCharacterController.TryEndAction(HandlerTypes.SlowTime); }
 			        }
 			        // Pause toggle.
@@ -300,6 +300,15 @@ namespace RPGCharacterAnims
 			else { rpgCharacterController.TryEndAction(HandlerTypes.Face); }
         }
 
+		IEnumerator SlowMo()
+        {
+			rpgCharacterController.TryStartAction(HandlerTypes.SlowTime, 0.25f);
+
+			yield return new WaitForSeconds(1f);
+			rpgCharacterController.TryEndAction(HandlerTypes.SlowTime);
+		
+		}
+
         private void Attacking()
         {
 			// Check to make sure Attack Action exists.
@@ -309,12 +318,32 @@ namespace RPGCharacterAnims
 			if (!rpgCharacterController.CanStartAction(HandlerTypes.Attack)) { return; }
 
 
+			
+
 			if(SelectHero == Hero.Tank)
             {
-				if (inputAttackL)
-				{ rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Left)); }
-				else if (inputAttackR)
-				{ rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Right)); }
+				if (inputAttackR)
+				{
+					int random = UnityEngine.Random.Range(0, 4);
+
+					if (random == 0)
+					{
+						StartCoroutine(SlowMo());
+					}
+					rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Left));
+					
+				}
+				else if (inputAttackL)
+				{
+					int random = UnityEngine.Random.Range(0, 4);
+
+					if (random == 0)
+					{
+						StartCoroutine(SlowMo());
+					}
+					rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Right));
+					
+				}
 			}
 
 			else if ( SelectHero == Hero.DPS)
@@ -324,6 +353,13 @@ namespace RPGCharacterAnims
                     //rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Left));
                     if (!IsAttacking)
                     {
+						int random = UnityEngine.Random.Range(0, 4);
+
+						if (random == 0)
+						{
+							StartCoroutine(SlowMo());
+						}
+
 						IsAttacking = true;
 						DPSPowers.BulletAttack();
 						canMove = true;
@@ -357,6 +393,13 @@ namespace RPGCharacterAnims
 
 					if (!IsAttacking && CanAttack)
 					{
+						int random = UnityEngine.Random.Range(0, 4);
+
+						if (random == 0)
+						{
+							StartCoroutine(SlowMo());
+						}
+
 						IsAttacking = true;
 						CanAttack = false;
 						rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Right));
