@@ -172,7 +172,17 @@ namespace RPGCharacterAnims
         private void Inputs()
         {
 	        try {
-                if (!speacialActive && SelectHero == Hero.DPS)
+                if (SelectHero == Hero.DPS)
+                {
+					if(!speacialActive)
+                    {
+						inputJump = Input.GetButtonDown("Jump");
+						isJumpHeld = Input.GetButton("Jump");
+					}
+
+					
+				}
+                else
                 {
 					inputJump = Input.GetButtonDown("Jump");
 					isJumpHeld = Input.GetButton("Jump");
