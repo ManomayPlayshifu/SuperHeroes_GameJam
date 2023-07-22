@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using RPGCharacterAnims.Actions;
 using RPGCharacterAnims.Extensions;
 using RPGCharacterAnims.Lookups;
+using Mirror;
 
 namespace RPGCharacterAnims
 {
@@ -14,6 +15,8 @@ namespace RPGCharacterAnims
     /// </summary>
     public class RPGCharacterController : MonoBehaviour
     {
+        
+
 	    /// <summary>
         /// Event called when actions are locked by an animation.
         /// </summary>
@@ -220,6 +223,7 @@ namespace RPGCharacterAnims
                 Debug.LogError("ERROR: THERE IS NO ANIMATOR COMPONENT ON CHILD OF CHARACTER.");
                 Debug.Break();
             }
+            
 
             animator.gameObject.AddComponent<RPGCharacterAnimatorEvents>();
             animator.updateMode = AnimatorUpdateMode.Normal;

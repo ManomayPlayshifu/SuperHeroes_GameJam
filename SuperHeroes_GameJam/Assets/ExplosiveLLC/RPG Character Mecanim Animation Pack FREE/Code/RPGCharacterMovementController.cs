@@ -3,6 +3,7 @@ using RPGCharacterAnims.Actions;
 using RPGCharacterAnims.Extensions;
 using RPGCharacterAnims.Lookups;
 using UnityEngine;
+using Mirror;
 
 namespace RPGCharacterAnims
 {
@@ -14,6 +15,7 @@ namespace RPGCharacterAnims
         private Rigidbody rb;
         private Animator animator;
         private CapsuleCollider capCollider;
+
 
 		/// <summary>
 		/// Returns whether the character can face.
@@ -183,13 +185,31 @@ namespace RPGCharacterAnims
 
         void Update()
         {
+            if (!isOwned)
+            {
+                return;
+            }
+            if (!NetworkClient.active)
+            {
+                return;
+            }
+
             if (!superCharacterController.enabled)
 			{ gameObject.SendMessage("SuperUpdate", SendMessageOptions.DontRequireReceiver); }
         }
 
         protected override void EarlyGlobalSuperUpdate()
         {
-	        if (acquiringGround) { rpgCharacterController.StartAction(HandlerTypes.AcquiringGround); }
+            if (!isOwned)
+            {
+                return;
+            }
+            if (!NetworkClient.active)
+            {
+                return;
+            }
+
+            if (acquiringGround) { rpgCharacterController.StartAction(HandlerTypes.AcquiringGround); }
 			else { rpgCharacterController.EndAction(HandlerTypes.AcquiringGround); }
 
             if (maintainingGround) { rpgCharacterController.StartAction(HandlerTypes.MaintainingGround); }
@@ -200,6 +220,16 @@ namespace RPGCharacterAnims
 		// This is run regardless of what state you're in.
         protected override void LateGlobalSuperUpdate()
         {
+
+            if (!isOwned)
+            {
+                return;
+            }
+            if (!NetworkClient.active)
+            {
+                return;
+            }
+
             // If the movement controller itself is disabled, this shouldn't run.
             if (!enabled) { return; }
 
@@ -212,6 +242,7 @@ namespace RPGCharacterAnims
                     animator.SetFloat(AnimationParameters.VelocityX, 0);
                     animator.SetFloat(AnimationParameters.VelocityZ, transform.InverseTransformDirection(currentVelocity).z * movementAnimationMultiplier);
                     animator.SetBool(AnimationParameters.Moving, true);
+  
                 }
 				else {
                     animator.SetFloat(AnimationParameters.VelocityX, 0f);

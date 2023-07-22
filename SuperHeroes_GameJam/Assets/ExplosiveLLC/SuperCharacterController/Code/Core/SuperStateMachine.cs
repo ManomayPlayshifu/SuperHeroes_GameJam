@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Mirror;
 /// <summary>
 /// State machine model that recieves SuperUpdate messages from the SuperCharacterController.
 /// </summary>
-public class SuperStateMachine:MonoBehaviour
+public class SuperStateMachine:NetworkBehaviour
 {
 	protected float timeEnteredState;
 

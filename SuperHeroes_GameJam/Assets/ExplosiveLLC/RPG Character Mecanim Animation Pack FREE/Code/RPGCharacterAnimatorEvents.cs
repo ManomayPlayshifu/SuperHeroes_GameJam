@@ -28,6 +28,7 @@ namespace RPGCharacterAnims
         {
 			rpgCharacterController = GetComponentInParent<RPGCharacterController>();
             animator = GetComponent<Animator>();
+
         }
 
         public void Hit() => OnHit.Invoke();
@@ -38,8 +39,8 @@ namespace RPGCharacterAnims
 
         public void WeaponSwitch() => OnWeaponSwitch.Invoke();
 
-        // Used for animations that contain root motion to drive the character’s
-		// position and rotation using the “Motion” node of the animation file.
+        // Used for animations that contain root motion to drive the character?s
+		// position and rotation using the ?Motion? node of the animation file.
 		void OnAnimatorMove()
 		{
 			if (!animator) { return; }

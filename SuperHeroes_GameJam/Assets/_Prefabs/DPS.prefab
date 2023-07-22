@@ -4593,7 +4593,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3201264556606992220}
-  m_LocalRotation: {x: -0.040700387, y: 0.87774825, z: -0.07579469, w: -0.47133505}
+  m_LocalRotation: {x: -0.040700376, y: 0.87774825, z: -0.07579467, w: -0.47133505}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5766,7 +5766,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4764715082443313086}
-  m_LocalRotation: {x: -0.047706023, y: 0.8769046, z: -0.08902023, w: -0.469934}
+  m_LocalRotation: {x: -0.04770602, y: 0.8769046, z: -0.089020215, w: -0.469934}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7294,6 +7294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f8445ce871a9b46b22d4812ecda9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkAnimator: {fileID: 1445552039490883604}
   knockbackMultiplier: 0
   movementAnimationMultiplier: 1
   currentVelocity: {x: 0, y: 0, z: 0}
@@ -7486,7 +7487,7 @@ MonoBehaviour:
   syncDirection: 1
   syncMode: 0
   syncInterval: 0
-  clientAuthority: 0
+  clientAuthority: 1
   animator: {fileID: 1838989255605559870}
 --- !u!1 &6654083579049445508
 GameObject:
