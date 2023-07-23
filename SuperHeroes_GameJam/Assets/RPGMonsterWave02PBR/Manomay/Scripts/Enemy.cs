@@ -5,6 +5,7 @@ using System.Linq;
 using Mirror;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : NetworkBehaviour
 {
@@ -32,7 +33,8 @@ public class Enemy : NetworkBehaviour
 
     [Header("Attack Options")] [SerializeField]
     private float attackSpeed = 1.5f;
-
+    [SerializeField] private GameObject hitEffect;
+    private GameObject hiteffectref;
     public float AttackSpeed
     {
         get => attackSpeed;
@@ -61,6 +63,9 @@ public class Enemy : NetworkBehaviour
     [Header("Health Options")] [SerializeField]
     private float enemyMaxHealth = 100f;
 
+    [SerializeField] public Slider healthSlider;
+    
+    [SyncVar(hook = nameof(SetHealthUIHook))]
     [SerializeField] private float currentHealth = 100f;
 
     public float enemyHealth
@@ -68,6 +73,8 @@ public class Enemy : NetworkBehaviour
         get => currentHealth;
         set => currentHealth = value;
     }
+
+    [SerializeField] private GameObject deatheffect;
 
 
     NetworkAnimator networkAnimator;
@@ -84,6 +91,8 @@ public class Enemy : NetworkBehaviour
         if (!NetworkServer.active)
             return;
 
+        healthSlider.maxValue = enemyMaxHealth;
+        healthSlider.value = currentHealth;
         networkAnimator = GetComponent<NetworkAnimator>();
         //_controller = gameObject.GetComponent<CharacterController>();
         rigidbody = gameObject.GetComponent<Rigidbody>();
@@ -97,6 +106,7 @@ public class Enemy : NetworkBehaviour
             return;
         CheckEnemyHealth();
         CheckForPlayer();
+        currentHealth -=Time.deltaTime * 2f;
     }
 
     private void FixedUpdate()
@@ -411,7 +421,31 @@ public class Enemy : NetworkBehaviour
 
     void EnemyDied()
     {
+        GameObject obj = Instantiate(deatheffect, transform.position, Quaternion.identity);
+        NetworkServer.Spawn(obj);
         Debug.Log($"{this.gameObject.name} has been destroyed");
         NetworkServer.Destroy(this.gameObject);
+    }
+    
+    void SetHealthUIHook(float oldvalue,float newvalue)
+    {
+        healthSlider.value = currentHealth;
+        if (currentHealth / enemyMaxHealth <= 0.3f)
+        {
+            healthSlider.image.color = Color.red;
+        }
+    }
+
+    public void SpawnHitEffect(Transform t)
+    {
+        hiteffectref = Instantiate(hitEffect, t.position, Quaternion.identity);
+        NetworkServer.Spawn(hiteffectref);
+        StartCoroutine(SpawnHitEffectForSeconds(hiteffectref));
+    }
+
+    IEnumerator SpawnHitEffectForSeconds(GameObject obj)
+    {
+        yield return new WaitForSeconds(3f);
+        NetworkServer.Destroy(obj);
     }
 }

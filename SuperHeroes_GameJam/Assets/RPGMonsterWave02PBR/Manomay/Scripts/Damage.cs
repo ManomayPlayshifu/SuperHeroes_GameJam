@@ -33,6 +33,7 @@ public class Damage : MonoBehaviour
                 Debug.Log("Attack hit");
                
                 // DAMAGE PLAYER HERE
+               Invoke("DamagePlayer",1f);
                 
                 Invoke("ResetAttack", _enemy.AttackSpeed); 
                 break;
@@ -43,5 +44,10 @@ public class Damage : MonoBehaviour
     private void ResetAttack()
     {
         isAttacking = false;
+    }
+
+    public void DamagePlayer()
+    {
+        _enemy.SpawnHitEffect(transform);
     }
 }
