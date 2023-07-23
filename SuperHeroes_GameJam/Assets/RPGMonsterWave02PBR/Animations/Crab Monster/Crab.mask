@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Crab
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Body
+    m_Weight: 1
+  - m_Path: Body/FrontLeftLeg01
+    m_Weight: 1
+  - m_Path: Body/FrontLeftLeg01/FrontLeftLeg02
+    m_Weight: 1
+  - m_Path: Body/FrontLeftLeg01/FrontLeftLeg02/FrontLeftLeg03
+    m_Weight: 1
+  - m_Path: Body/FrontLeftLeg01/FrontLeftLeg02/FrontLeftLeg03/FrontLeftLeg04
+    m_Weight: 1
+  - m_Path: Body/FrontLeftLeg01/FrontLeftLeg02/FrontLeftLeg03/FrontLeftLeg04/FrontLeftLeg05
+    m_Weight: 1
+  - m_Path: Body/FrontRightLeg01
+    m_Weight: 1
+  - m_Path: Body/FrontRightLeg01/FrontRightLeg02
+    m_Weight: 1
+  - m_Path: Body/FrontRightLeg01/FrontRightLeg02/FrontRightLeg03
+    m_Weight: 1
+  - m_Path: Body/FrontRightLeg01/FrontRightLeg02/FrontRightLeg03/FrontRightLeg04
+    m_Weight: 1
+  - m_Path: Body/FrontRightLeg01/FrontRightLeg02/FrontRightLeg03/FrontRightLeg04/FrontRightLeg05
+    m_Weight: 1
+  - m_Path: Body/RearLeftLeg01
+    m_Weight: 1
+  - m_Path: Body/RearLeftLeg01/RearLeftLeg02
+    m_Weight: 1
+  - m_Path: Body/RearLeftLeg01/RearLeftLeg02/RearLeftLeg03
+    m_Weight: 1
+  - m_Path: Body/RearLeftLeg01/RearLeftLeg02/RearLeftLeg03/RearLeftLeg04
+    m_Weight: 1
+  - m_Path: Body/RearLeftLeg01/RearLeftLeg02/RearLeftLeg03/RearLeftLeg04/RearLeftLeg05
+    m_Weight: 1
+  - m_Path: Body/RearRightLeg01
+    m_Weight: 1
+  - m_Path: Body/RearRightLeg01/RearRightLeg02
+    m_Weight: 1
+  - m_Path: Body/RearRightLeg01/RearRightLeg02/RearRightLeg03
+    m_Weight: 1
+  - m_Path: Body/RearRightLeg01/RearRightLeg02/RearRightLeg03/RearRightLeg04
+    m_Weight: 1
+  - m_Path: Body/RearRightLeg01/RearRightLeg02/RearRightLeg03/RearRightLeg04/RearRightLeg05
+    m_Weight: 1
+  - m_Path: Body/Spine01
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head/Eye01
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head/Eye01/Eye02
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head/Eye01/Eye02/Eye03
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head/EyePatch
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head/Horn01
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head/Horn01/Horn02
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head/Horn01/Horn03
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/Head/Mouth
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0101
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0101/Spike0102
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0201
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0201/Spike0202
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0301
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0301/Spike0302
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0401
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0401/Spike0402
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0501
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0501/Spike0502
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0601
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0601/Spike0602
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0701
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0701/Spike0702
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0801
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/SpikeCTRL/Spike0801/Spike0802
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm/Hand
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm/Hand/joint1
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm/Hand/joint1/Claw01
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm/Hand/joint1/Claw01/Claw02
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm/Hand/joint1/Claw01/Claw02/Claw03
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm/Hand/joint1/Claw04
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm/Hand/joint1/Claw04/Claw05
+    m_Weight: 1
+  - m_Path: Body/Spine01/Spine02/UpperArm/LowerArm/Hand/joint1/Claw04/Claw05/Claw06
+    m_Weight: 1
+  - m_Path: CrabMesh
+    m_Weight: 1

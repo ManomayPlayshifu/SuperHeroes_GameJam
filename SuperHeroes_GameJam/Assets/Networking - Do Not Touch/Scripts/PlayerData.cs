@@ -74,6 +74,7 @@ public class PlayerData : NetworkBehaviour
         GameObject obj = Instantiate(characterPrefabs[index]);
         NetworkServer.Spawn(obj,playerGameObject);
         GetPlayerCharacter(connectionToClient,obj.GetComponent<NetworkIdentity>().netId);
+        RoomData.instance.AddPlayerObj(obj);
     }
 
      [TargetRpc]
@@ -82,5 +83,5 @@ public class PlayerData : NetworkBehaviour
          MyCharacterGO = NetworkClient.spawned[netid].gameObject;
      }
 
-     
+
 }

@@ -401,8 +401,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037473355398340318}
-  m_LocalRotation: {x: 0.034728978, y: 0.9626383, z: -0.22266129, w: 0.15014486}
-  m_LocalPosition: {x: 8.526513e-14, y: 0, z: -0.0000006743496}
+  m_LocalRotation: {x: -0.043905046, y: 0.9555289, z: -0.22233316, w: -0.18869223}
+  m_LocalPosition: {x: 3.4209194, y: 0, z: -0.16594672}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1057,8 +1057,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2817433995095378768}
-  m_LocalRotation: {x: 0.030580562, y: 0.96833766, z: -0.19689733, w: 0.1503947}
-  m_LocalPosition: {x: 8.526513e-14, y: 0, z: -0.0000006743496}
+  m_LocalRotation: {x: -0.037862398, y: 0.9620763, z: -0.19647679, w: -0.18539853}
+  m_LocalPosition: {x: 3.365389, y: 0, z: -0.1429882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1676,8 +1676,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3445526105680432632}
-  m_LocalRotation: {x: 0.028362665, y: 0.9708493, z: -0.18696852, w: 0.14727545}
-  m_LocalPosition: {x: 8.526513e-14, y: 0, z: -0.0000006743496}
+  m_LocalRotation: {x: -0.03670828, y: 0.9632787, z: -0.18551046, w: -0.19061086}
+  m_LocalPosition: {x: 3.387064, y: 0, z: -0.15185547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2047,6 +2047,7 @@ GameObject:
   - component: {fileID: 7682807462057743251}
   - component: {fileID: 7133418670051403515}
   - component: {fileID: 1330299930690854782}
+  - component: {fileID: 397876301}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -2062,7 +2063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4195048926317353425}
   m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.38268343}
-  m_LocalPosition: {x: 0, y: 0, z: -2.5}
+  m_LocalPosition: {x: -10, y: 1.5, z: -26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2206,7 +2207,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6
+  m_Radius: 0.5
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1.25, z: 0}
@@ -2336,6 +2337,19 @@ MonoBehaviour:
   syncInterval: 0
   clientAuthority: 1
   animator: {fileID: 9193557591912475566}
+--- !u!65 &397876301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4195048926317353425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0.63, z: 0}
 --- !u!1 &4562783253393762654
 GameObject:
   m_ObjectHideFlags: 0
