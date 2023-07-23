@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: 3e8a48cd2d81d9d4f823ea6e5f1c396a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 715df9372183c47e389bb6e19fbc3b52, type: 3}
+  editorImportSettings:
+    generateSecondaryUVSet: 0
+  importSettings:
+    nodeNameMethod: 1
+    animationMethod: 2
+    generateMipMaps: 1
+    defaultMinFilterMode: 9729
+    defaultMagFilterMode: 9729
+    anisotropicFilterLevel: 1
+  instantiationSettings:
+    mask: -1
+    layer: 0
+    skinUpdateWhenOffscreen: 1
+    lightIntensityFactor: 1
+    sceneObjectCreation: 2
+  assetDependencies:
+  - type: 0
+    originalUri: Assets/TerraAssets/GLB/Trashbag_1_ZWfEwusVS8/Trashbag_1.bin
+    assetPath: Assets/TerraAssets/GLB/Trashbag_1_ZWfEwusVS8/Trashbag_1.bin
+  - type: 1
+    originalUri: Assets/TerraAssets/GLB/Trashbag_1_ZWfEwusVS8/Trashbag_Normals.png
+    assetPath: Assets/TerraAssets/GLB/Trashbag_1_ZWfEwusVS8/Trashbag_Normals.png
+  - type: 1
+    originalUri: Assets/TerraAssets/GLB/Trashbag_1_ZWfEwusVS8/Trashbag_Albedo.jpg
+    assetPath: Assets/TerraAssets/GLB/Trashbag_1_ZWfEwusVS8/Trashbag_Albedo.jpg
+  - type: 1
+    originalUri: Assets/TerraAssets/GLB/Trashbag_1_ZWfEwusVS8/Trashbag_Metallic.jpg
+    assetPath: Assets/TerraAssets/GLB/Trashbag_1_ZWfEwusVS8/Trashbag_Metallic.jpg
+  reportItems: []

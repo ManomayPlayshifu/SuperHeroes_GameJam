@@ -1,0 +1,45 @@
+fileFormatVersion: 2
+guid: 04ba88bb871314f99b165dbb33f6914c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 715df9372183c47e389bb6e19fbc3b52, type: 3}
+  editorImportSettings:
+    generateSecondaryUVSet: 0
+  importSettings:
+    nodeNameMethod: 1
+    animationMethod: 2
+    generateMipMaps: 1
+    defaultMinFilterMode: 9729
+    defaultMagFilterMode: 9729
+    anisotropicFilterLevel: 1
+  instantiationSettings:
+    mask: -1
+    layer: 0
+    skinUpdateWhenOffscreen: 1
+    lightIntensityFactor: 1
+    sceneObjectCreation: 2
+  assetDependencies:
+  - type: 0
+    originalUri: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Woodland_Hill_07.bin
+    assetPath: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Woodland_Hill_07.bin
+  - type: 1
+    originalUri: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Plants02_D.jpg
+    assetPath: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Plants02_D.jpg
+  - type: 1
+    originalUri: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Rocks_D.jpg
+    assetPath: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Rocks_D.jpg
+  - type: 1
+    originalUri: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Plants01_D.jpg
+    assetPath: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Plants01_D.jpg
+  - type: 1
+    originalUri: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Wood_rock_D.jpg
+    assetPath: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Wood_rock_D.jpg
+  - type: 1
+    originalUri: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Grass2_D.jpg
+    assetPath: Assets/TerraAssets/GLB/Nature/Woodland_Hill_07_VLAIj5PLyz/Grass2_D.jpg
+  reportItems: []
