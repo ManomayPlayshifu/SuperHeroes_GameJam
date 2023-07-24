@@ -106,7 +106,7 @@ public class Enemy : NetworkBehaviour
             return;
         CheckEnemyHealth();
         CheckForPlayer();
-        currentHealth -=Time.deltaTime * 2f;
+        //currentHealth -=Time.deltaTime * 2f;
     }
 
     private void FixedUpdate()
@@ -369,7 +369,17 @@ public class Enemy : NetworkBehaviour
 
     public void DecreaseEnemyHealth(float value)
     {
-        if (NetworkClient.active)
+        CMDDecreaseEnemyHealth(value);
+        
+    }
+
+
+    [Command(requiresAuthority = false)]
+    public void CMDDecreaseEnemyHealth(float value)
+    {
+        
+
+        if (!NetworkServer.active)
         {
             Debug.LogError("CallingOnClient");
             return;
@@ -387,7 +397,12 @@ public class Enemy : NetworkBehaviour
         {
             currentHealth = 0;
         }
+
+       
     }
+
+
+
 
     IEnumerator ReduceLayerWeight()
     {
