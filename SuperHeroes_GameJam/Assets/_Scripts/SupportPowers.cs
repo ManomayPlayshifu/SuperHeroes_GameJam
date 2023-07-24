@@ -81,8 +81,11 @@ public class SupportPowers : MonoBehaviour
 
 
                 Vector3 direction = Box.transform.position - target.transform.position;
+
+                Box.GetComponent<Box>().TurnOnDamage();
                 BoxRigidBody.useGravity = true;
                 BoxRigidBody.AddForce(-direction * 3f, ForceMode.VelocityChange);
+                Box.GetComponent<Box>().TurnOffDamage(2f);
 
             }
         }

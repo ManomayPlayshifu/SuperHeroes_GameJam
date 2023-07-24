@@ -17,6 +17,8 @@ namespace RPGCharacterAnims
 
 		public DPSPowers DPSPowers;
 		public SupportPowers SupportPowers;
+		public Fists LeftFist;
+		public Fists RightFist;
 
 		bool IsAttacking;
 
@@ -61,6 +63,7 @@ namespace RPGCharacterAnims
         {
 			rpgCharacterController = GetComponent<RPGCharacterController>();
 			rpgCharacterMovementController = GetComponent<RPGCharacterMovementController>();
+
 		}
 
         private void Update()
@@ -326,10 +329,12 @@ namespace RPGCharacterAnims
 
 		IEnumerator SlowMo(float time)
         {
-			rpgCharacterController.TryStartAction(HandlerTypes.SlowTime, 0.25f);
+			yield return null;
 
-			yield return new WaitForSeconds(time);
-			rpgCharacterController.TryEndAction(HandlerTypes.SlowTime);
+			//rpgCharacterController.TryStartAction(HandlerTypes.SlowTime, 0.25f);
+
+			//yield return new WaitForSeconds(time);
+			//rpgCharacterController.TryEndAction(HandlerTypes.SlowTime);
 		
 		}
 
@@ -350,6 +355,8 @@ namespace RPGCharacterAnims
 				{
 					int random = UnityEngine.Random.Range(0, 4);
 
+
+
 					if (random == 0)
 					{
 						StartCoroutine(SlowMo(1f));
@@ -357,11 +364,15 @@ namespace RPGCharacterAnims
 
 					if( random < 2)
                     {
+						LeftFist.TurnOnDamage();
 						rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Left));
+						LeftFist.TurnOffDamage(0.5f);
 					}
                     else
                     {
+						RightFist.TurnOnDamage();
 						rpgCharacterController.StartAction(HandlerTypes.Attack, new AttackContext(HandlerTypes.Attack, Side.Right));
+						RightFist.TurnOffDamage(0.5f);
 					}
 					
 				}

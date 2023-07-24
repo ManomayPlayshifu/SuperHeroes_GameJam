@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Shadow
   - Collide
+  - FxTemporaire
+  - HUD
   layers:
   - Default
   - TransparentFX

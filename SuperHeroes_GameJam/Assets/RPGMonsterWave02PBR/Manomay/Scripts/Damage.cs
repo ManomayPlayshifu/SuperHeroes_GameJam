@@ -31,9 +31,10 @@ public class Damage : MonoBehaviour
             {
                 isAttacking = true;
                 Debug.Log("Attack hit");
-               
-                // DAMAGE PLAYER HERE
-               Invoke("DamagePlayer",1f);
+
+                col.gameObject.GetComponent<PlayerHealth>()._Health -= 10f;
+
+               Invoke("DamagePlayer",0f);
                 
                 Invoke("ResetAttack", _enemy.AttackSpeed); 
                 break;

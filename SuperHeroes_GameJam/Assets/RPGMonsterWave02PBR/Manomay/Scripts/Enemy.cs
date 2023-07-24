@@ -35,6 +35,9 @@ public class Enemy : NetworkBehaviour
     private float attackSpeed = 1.5f;
     [SerializeField] private GameObject hitEffect;
     private GameObject hiteffectref;
+
+    private uint netId;
+
     public float AttackSpeed
     {
         get => attackSpeed;
@@ -367,17 +370,17 @@ public class Enemy : NetworkBehaviour
         _animator.SetLayerWeight(1, 0f);
     }
 
-    public void DecreaseEnemyHealth(float value)
+    public void DecreaseEnemyHealth(float value, uint netID)
     {
-        CMDDecreaseEnemyHealth(value);
+        CMDDecreaseEnemyHealth(value, netID);
         
     }
 
 
     [Command(requiresAuthority = false)]
-    public void CMDDecreaseEnemyHealth(float value)
+    public void CMDDecreaseEnemyHealth(float value, uint netId)
     {
-        
+        Debug.Log("C# NetId : " + netId);
 
         if (!NetworkServer.active)
         {
@@ -393,8 +396,20 @@ public class Enemy : NetworkBehaviour
         }
 
         currentHealth -= value;
+
         if (currentHealth < 0)
         {
+            this.netId = netId;
+
+            var spawned = NetworkServer.spawned;
+            foreach (var pair in spawned)
+            {
+                if(pair.Key == netId)
+                {
+                    pair.Value.gameObject.GetComponent<KillCount>()._KillCount += 1;
+                }
+            }
+
             currentHealth = 0;
         }
 
@@ -462,5 +477,10 @@ public class Enemy : NetworkBehaviour
     {
         yield return new WaitForSeconds(3f);
         NetworkServer.Destroy(obj);
+    }
+
+    private void OnDestroy()
+    {
+    
     }
 }

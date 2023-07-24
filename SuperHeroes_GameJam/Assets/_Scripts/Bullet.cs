@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class Bullet : MonoBehaviour
+public class Bullet : NetworkBehaviour
 {
     public float speed = 5f;
 
@@ -26,7 +27,7 @@ public class Bullet : MonoBehaviour
         if (Target == null)
         {
             //Rigidbody.velocity = transform.forward * speed;
-            var nearestOnject = NearestGameObject(transform.position, 10f);
+            var nearestOnject = NearestGameObject(transform.position, 20f);
 
             if (nearestOnject != null)
             {
@@ -63,7 +64,7 @@ public class Bullet : MonoBehaviour
 
         var direction = startPos - Target.position;
 
-        if (Mathf.Abs(Vector3.Angle(transform.forward, Target.position)) < 45 && direction.sqrMagnitude < 100)
+        if (Mathf.Abs(Vector3.Angle(transform.forward, Target.position)) < 45 && direction.sqrMagnitude < 400)
         {
             Vector2 noise = new Vector2(Random.Range(MinNoise.x, MaxNoise.x), Random.Range(MinNoise.y, MaxNoise.y));
             Vector3 BulletDirection = new Vector3(Target.position.x, Target.position.y, Target.position.z) - startPos;
@@ -117,7 +118,7 @@ public class Bullet : MonoBehaviour
 
             var direction = pos - collider.gameObject.transform.position;
 
-            if (Mathf.Abs(Vector3.Angle(transform.forward, collider.gameObject.transform.position)) < 20 && distanceToCurrent < 100)
+            if (Mathf.Abs(Vector3.Angle(transform.forward, collider.gameObject.transform.position)) < 20 && distanceToCurrent < 400)
             {
                 if (distanceToCurrent < distanceToNearest)
                 {
@@ -140,5 +141,23 @@ public class Bullet : MonoBehaviour
 
         
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (!NetworkClient.active)
+        {
+            return;
+        }
+
+        if(other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
+        {
+            uint id = PlayerData.Instance.MyCharacterGO.GetComponent<NetworkIdentity>().netId;
+            enemy.DecreaseEnemyHealth(5, id);
+        }
+    }
+
+  
 
 }
