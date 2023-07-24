@@ -25,9 +25,9 @@ ScriptedImporter:
     sceneObjectCreation: 2
   assetDependencies:
   - type: 0
-    originalUri: Assets/TerraAssets/GLB/Mushroom_07_0KJ1fYs4VO/Mushroom_07.bin
-    assetPath: Assets/TerraAssets/GLB/Mushroom_07_0KJ1fYs4VO/Mushroom_07.bin
+    originalUri: Assets/Level Assets/TerraAssets/GLB/Mushroom_07_0KJ1fYs4VO/Mushroom_07.bin
+    assetPath: Assets/Level Assets/TerraAssets/GLB/Mushroom_07_0KJ1fYs4VO/Mushroom_07.bin
   - type: 1
-    originalUri: Assets/TerraAssets/GLB/Mushroom_07_0KJ1fYs4VO/Mushroom07_tex1.jpg
-    assetPath: Assets/TerraAssets/GLB/Mushroom_07_0KJ1fYs4VO/Mushroom07_tex1.jpg
+    originalUri: Assets/Level Assets/TerraAssets/GLB/Mushroom_07_0KJ1fYs4VO/Mushroom07_tex1.jpg
+    assetPath: Assets/Level Assets/TerraAssets/GLB/Mushroom_07_0KJ1fYs4VO/Mushroom07_tex1.jpg
   reportItems: []
