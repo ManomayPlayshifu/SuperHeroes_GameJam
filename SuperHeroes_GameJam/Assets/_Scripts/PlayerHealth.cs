@@ -20,10 +20,12 @@ public class PlayerHealth : NetworkBehaviour
 
     Coroutine corutine;
 
+    private GameObject obj;
 
     private void Start()
     {
-        GameObject.FindGameObjectWithTag("HUD").transform.GetChild(0).GetComponent<Slider>().value = (Health / MaxHealth);
+        obj = GameObject.FindGameObjectWithTag("HUD");
+        obj.transform.GetChild(0).GetComponent<Slider>().value = (Health / MaxHealth);
 
     }
 
@@ -31,7 +33,7 @@ public class PlayerHealth : NetworkBehaviour
     {
         if(NetworkClient.active && isOwned)
         {
-            GameObject.FindGameObjectWithTag("HUD").transform.GetChild(0).GetComponent<Slider>().value = (Health / MaxHealth);
+            obj.transform.GetChild(0).GetComponent<Slider>().value = (Health / MaxHealth);
         }
 
         if (newvalue <= 0f && NetworkServer.active)
