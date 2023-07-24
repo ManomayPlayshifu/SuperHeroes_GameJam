@@ -1827,9 +1827,9 @@ MonoBehaviour:
   attackSpeed: 1.5
   hitEffect: {fileID: 8410260079211329026, guid: 2be88d921b2544ec3aff31b976849273, type: 3}
   testTarget: {fileID: 0}
-  enemyMaxHealth: 100
+  enemyMaxHealth: 1000
   healthSlider: {fileID: 5889863259469379105}
-  currentHealth: 100
+  currentHealth: 1000
   deatheffect: {fileID: 7337118704841985074, guid: 2a4e61098c2d445b3a31d0e5ad898a4b, type: 3}
 --- !u!114 &852501175564682662
 MonoBehaviour:
