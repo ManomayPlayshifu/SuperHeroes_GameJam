@@ -26,10 +26,8 @@ public class KillCount : NetworkBehaviour
     {
         if (newvalue == EnemiesToKill && NetworkClient.active)
         {
-            Camera.main.gameObject.SetActive(false);
             SpawnedTimeline = Instantiate(CutScene);
-            float duration = (float)SpawnedTimeline.transform.GetChild(0).GetComponent<PlayableDirector>().playableAsset.duration;
-            StartCoroutine(Disable(duration));
+            StartCoroutine(Disable(5f));
 
         }
     }
@@ -38,7 +36,6 @@ public class KillCount : NetworkBehaviour
     {
         yield return new WaitForSeconds(delay);
         SpawnedTimeline.SetActive(false);
-        Camera.main.gameObject.SetActive(true);
     }
 
 }

@@ -1726,6 +1726,7 @@ GameObject:
   - component: {fileID: 5476744085949180862}
   - component: {fileID: 5476744085949180861}
   - component: {fileID: 5145390011192203449}
+  - component: {fileID: 7513506722958151718}
   m_Layer: 6
   m_Name: BlackKnightPBRDefault
   m_TagString: Untagged
@@ -1914,6 +1915,22 @@ MonoBehaviour:
   positionSensitivity: 0.01
   rotationSensitivity: 0.01
   scaleSensitivity: 0.01
+--- !u!114 &7513506722958151718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852501175564682652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcdfcb855eda4b3c87324463f91d8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  endcutscene: {fileID: 4190724925390172620, guid: 3cbd01495ab61487f94c4b1fc3202c3e, type: 3}
 --- !u!1 &852501175634962584
 GameObject:
   m_ObjectHideFlags: 0

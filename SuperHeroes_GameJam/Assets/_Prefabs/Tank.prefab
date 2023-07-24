@@ -2371,7 +2371,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   EnemiesToKill: 3
-  CutScene: {fileID: 0}
+  CutScene: {fileID: 5326705128106660636, guid: 03a858ff4e0864268880c5d772799e01, type: 3}
 --- !u!114 &-5879888725611859644
 MonoBehaviour:
   m_ObjectHideFlags: 0
