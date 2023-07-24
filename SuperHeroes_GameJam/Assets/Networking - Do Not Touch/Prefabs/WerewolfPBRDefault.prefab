@@ -2771,8 +2771,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   detectPlayerFromDistance: 1.5
-  roamingSpeed: 1.5
-  attackingMoveSpeed: 4
+  roamingSpeed: 0.75
+  attackingMoveSpeed: 2
   movemode: 0
   rotationSpeed: 2
   waypointtarget: {fileID: 0}
